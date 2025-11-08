@@ -8,6 +8,7 @@ Orchestrator is a CLI framework that enables you to coordinate multiple AI agent
 
 ## Features
 
+### Core Features
 - 🤖 **Multi-Agent System**: Planner, Executor, Reviewer, and Debugger agents working in harmony
 - 🔄 **RGR Workflow**: Test-driven development with Red-Green-Refactor cycles
 - 🌳 **Git Integration**: Automatic worktree and branch management for each task step
@@ -17,6 +18,20 @@ Orchestrator is a CLI framework that enables you to coordinate multiple AI agent
 - 🧩 **Extensible**: Plugin-based architecture for custom agents and providers
 - 📊 **Quality Gates**: Automated testing, linting, type-checking, and security scanning
 - 🔧 **MCP Support**: Integration with Model Context Protocol for tool access
+
+### 🚀 LLM Optimization Features (NEW!)
+- ⚡ **Prompt Caching**: 60-90% cost reduction, 80-85% latency improvement
+- 💰 **Token Tracking**: Real-time usage monitoring and budget enforcement
+- 🎯 **Model Routing**: Intelligent model selection for cost/speed/quality optimization
+- 🔄 **Smart Retry**: Exponential backoff with jitter for transient failures
+- 📈 **Performance Monitoring**: Comprehensive analytics and recommendations
+- 🧠 **Memory Systems**: Buffer, summary, and token-based conversation memory
+- 🔗 **LangChain Integration**: Use any LangChain model with Orchestrator
+- 📚 **RAG Support**: Retrieval-augmented generation with vector stores
+- 🎛️ **Context Optimization**: Smart pruning and compression for large contexts
+- 🚦 **Rate Limiting**: Prevent API throttling with token bucket algorithm
+
+**[See Full Optimization Guide →](docs/OPTIMIZATION.md)**
 
 ## Architecture
 

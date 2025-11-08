@@ -28,7 +28,11 @@
     "multi-agent",
     "llm",
     "automation",
-    "cli"
+    "cli",
+    "langchain",
+    "rag",
+    "optimization",
+    "caching"
   ],
   "author": "",
   "license": "MIT",
@@ -60,5 +64,21 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "peerDependencies": {
+    "@langchain/core": "^0.3.0",
+    "@langchain/anthropic": "^0.3.0",
+    "@langchain/openai": "^0.3.0"
+  },
+  "peerDependenciesMeta": {
+    "@langchain/core": {
+      "optional": true
+    },
+    "@langchain/anthropic": {
+      "optional": true
+    },
+    "@langchain/openai": {
+      "optional": true
+    }
   }
 }
