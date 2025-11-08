@@ -1,0 +1,69 @@
+# Example Orchestrator Configuration
+
+provider:
+  name: anthropic
+  apiKey: ${ANTHROPIC_API_KEY}
+  model: claude-sonnet-4-5
+
+agents:
+  planner:
+    enabled: true
+    temperature: 0.7
+    maxTokens: 4096
+  executor:
+    enabled: true
+    temperature: 0.5
+    maxTokens: 4096
+  reviewer:
+    enabled: true
+    temperature: 0.3
+    maxTokens: 4096
+  debugger:
+    enabled: true
+    temperature: 0.5
+    maxTokens: 4096
+
+testHarness:
+  enabled: true
+  framework: vitest
+  coverageThreshold: 80
+  strictMode: true
+  generator:
+    provider: anthropic
+    model: claude-sonnet-4-5
+
+git:
+  worktreeDir: ./worktrees
+  autoCommit: true
+  branchPrefix: task
+
+quality:
+  gates:
+    - name: typecheck
+      command: npm run typecheck
+      required: true
+      timeout: 30000
+    - name: lint
+      command: npm run lint
+      required: true
+      timeout: 30000
+    - name: test
+      command: npm test
+      required: true
+      timeout: 120000
+    - name: build
+      command: npm run build
+      required: true
+      timeout: 60000
+  standards:
+    - name: complexity
+      value: 10
+    - name: max-function-length
+      value: 50
+    - name: max-file-lines
+      value: 500
+
+state:
+  dbPath: ./orchestrator.db
+  checkpointInterval: 60000
+  retentionDays: 30
